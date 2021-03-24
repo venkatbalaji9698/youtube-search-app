@@ -32,8 +32,10 @@ const HomePage = ({ history }) => {
 
   useEffect(() => {
     if (youtubeVideosResponse && youtubeVideosResponse.response) {
-      setVideosList(youtubeVideosResponse.response.items);
-      setDisplayVideo(youtubeVideosResponse.response.items[0]);
+      if (youtubeVideosResponse.response.items && youtubeVideosResponse.response.items.length) {
+        setVideosList(youtubeVideosResponse.response.items);
+        setDisplayVideo(youtubeVideosResponse.response.items[0]);
+      }
       setLoading(false);
     }
   }, [youtubeVideosResponse]);
@@ -67,7 +69,13 @@ const HomePage = ({ history }) => {
         </div>
       )
     }
-    return null;
+    return (
+      <div className="home__content">
+        <div className="home__content_no-content">
+          No Data found.
+        </div>
+      </div>
+    );
   }
 
   return (
