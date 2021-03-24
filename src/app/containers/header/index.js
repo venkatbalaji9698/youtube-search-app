@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { PathConstants } from '../../constants/path-constants';
 import './index.scss';
 
 const Header = (props) => {
 
-    const { onSearch } = props;
+    const { onSearch, history } = props;
     const [searchVal, setSearchVal] = useState('');
 
     const onKeyUp = (event) => {
@@ -17,6 +18,10 @@ const Header = (props) => {
         setSearchVal(event.target.value);
     }
 
+    const handleGoToPageThree = () => {
+        history.push(PathConstants.CARDS_LIST);
+    }
+
     return (
         <div className="header">
             <h1 className="header_title">Mini Youtube</h1>
@@ -28,6 +33,7 @@ const Header = (props) => {
                     onChange={onChange}
                 />
             </div>
+            <p className="header_right" onClick={handleGoToPageThree}>Go to page 3</p>
         </div>
     )
 }

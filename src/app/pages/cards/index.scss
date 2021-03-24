@@ -1,0 +1,55 @@
+.cards {
+    background-color: #f7f7f8;
+    min-height: 100vh;
+
+    &_back {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding-top: 5rem;
+        padding-bottom: 1rem;
+
+        p {
+            padding: 1rem 2rem;
+            background: rgb(67, 67, 243);
+            display: inline-block;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    }
+
+    &__tab-list {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+    }
+
+    &__tab {
+        width: 40%;
+        padding: 1rem 0;
+        font-size: 1.4rem;
+        text-align: center;
+        border-bottom: 1px solid lightgray;
+        cursor: pointer;
+
+        &.active {
+            background-color: white;
+            border-bottom: none;
+            border-top: 1px solid lightgray;
+            cursor: default;
+        }
+
+        &:first-child {
+            border-right: 1px solid lightgray;
+        }
+    }
+
+    &__dropdown-wrapper {
+        width: 20%;
+    }
+
+    &_carousel-wrapper {
+        padding-top: 5rem;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+}

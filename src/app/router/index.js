@@ -5,6 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import Loadable from 'react-loadable';
 import Loader from '../components/loader';
+import { PathConstants } from '../constants/path-constants';
 
 const LoginPage = Loadable({
     loader: () => import('../pages/login'),
@@ -16,13 +17,20 @@ const HomePage = Loadable({
     loading: Loader,
 });
 
+const CardsPage = Loadable({
+    loader: () => import('../pages/cards'),
+    loading: Loader,
+});
+
+
 class Router extends Component {
     render() {
         const DOM = (
             <div>
                 <Switch>
-                    <Route exact path="/" component={LoginPage} />
-                    <Route exact path="/home" component={HomePage} />
+                    <Route exact path={PathConstants.LOGIN} component={LoginPage} />
+                    <Route exact path={PathConstants.HOME} component={HomePage} />
+                    <Route exact path={PathConstants.CARDS_LIST} component={CardsPage} />
                 </Switch >
             </div>
         );

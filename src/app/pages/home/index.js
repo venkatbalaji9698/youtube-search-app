@@ -80,7 +80,7 @@ const HomePage = ({ history }) => {
 
   return (
     <div className="home">
-      <Header onSearch={onSearch} />
+      <Header onSearch={onSearch} history={history} />
       {getMainContent()}
     </div>
   );

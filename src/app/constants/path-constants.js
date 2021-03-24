@@ -1,4 +1,5 @@
 export const PathConstants = {
   LOGIN: '/',
-  HOME: '/home'
+  HOME: '/home',
+  CARDS_LIST: '/cards-list'
 };
