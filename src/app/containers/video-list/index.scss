@@ -1,0 +1,23 @@
+
+.video-list {
+    list-style-type: none;
+
+    &__item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+        cursor: pointer;
+
+        img {
+            margin-right: 1rem;
+            width: 250px;
+            height: 125px;
+        }
+
+        p {
+            font-size: 1.4rem;
+            font-weight: 600;
+            max-width: 200px;
+        }
+    }
+}

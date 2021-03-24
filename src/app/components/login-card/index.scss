@@ -1,0 +1,36 @@
+.login-card {
+    border: 1px solid #dbdbdb;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+
+    &__title {
+        text-align: center;
+        padding-bottom: 2rem;
+    }
+
+    &__label {
+        color: #636363;
+        font-size: 1.4rem;
+        display: block;
+        padding-bottom: 5px;
+    }
+
+    &__input {
+        font-size: 1.4rem;
+        display: block;
+        padding: 7px 5px;
+        margin-bottom: 2rem;
+        border-color: grey;
+        border-radius: 5px;
+        width: 30rem;
+    }
+
+    &__btn {
+        font-size: 15px;
+        display: block;
+        padding: 6px 20px;
+        margin: auto;
+        cursor: pointer;
+    }
+}
