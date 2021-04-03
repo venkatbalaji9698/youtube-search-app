@@ -14,6 +14,12 @@
     z-index: 1;
     box-sizing: border-box;
 
+    @media only screen and (max-width: 768px) {
+        flex-direction: column;
+        height: 12rem;
+        padding: 1rem 0;
+      }
+
     &_title {
         font-size: 2.4rem;
         font-weight: 700;
@@ -22,10 +28,21 @@
     &__search-tab {
         margin-left: 10rem;
 
+        @media only screen and (max-width: 768px) {
+            width: 100%;
+            margin-left: 0;
+            display: flex;
+            justify-content: center;
+          }
+
         &_input-field {
             padding: 1rem;
             font-size: 1.4rem;
             width: 400px;
+
+            @media only screen and (max-width: 768px) {
+                width: 80%;
+              }
         }
     }
 

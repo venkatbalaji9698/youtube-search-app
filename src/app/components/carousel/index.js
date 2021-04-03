@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 import Img1 from '../../../assets/images/img1.jpg';
 import Img3 from '../../../assets/images/img3.jpg';
 
 import './index.scss';
 
-const CustomCarousel = () => {
+const CustomCarousel = ({ isMobile }) => {
     const [lastTab, setLastTab] = useState(3);
     const cardsList = [
         {
@@ -35,6 +38,17 @@ const CustomCarousel = () => {
         },
     ];
 
+    const responsive = {
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 1
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1
+        }
+    };
+
     const handleLeftClick = () => {
         if (lastTab > cardsList.length - 2) {
             setLastTab(lastTab - 1);
@@ -53,6 +67,32 @@ const CustomCarousel = () => {
                 ele.scrollIntoView({ behavior: 'smooth' });
             }
         }
+    }
+
+    if (isMobile) {
+        return (
+            <div>
+                <Carousel
+                    showDots={false}
+                    responsive={responsive}
+                    transitionDuration={100}
+                    containerClass="carousel-container"
+                    removeArrowOnDeviceType={['tablet', 'mobile']}
+                    itemClass="carousel-item-padding-12-px"
+                    autoPlay
+                    infinite
+                >
+                    {cardsList.map(item => {
+                        return (
+                            <div className="carousel-container_item" id={`card-${item.id}`}>
+                                <img src={item.image} />
+                                <p className="carousel-container_title">{item.title}</p>
+                            </div>
+                        )
+                    })}
+                </Carousel>
+            </div>
+        )
     }
 
     return (
@@ -74,3 +114,11 @@ const CustomCarousel = () => {
 }
 
 export default CustomCarousel;
+
+CustomCarousel.propTypes = {
+    isMobile: PropTypes.bool
+}
+
+CustomCarousel.defaultProps = {
+    isMobile: false
+}

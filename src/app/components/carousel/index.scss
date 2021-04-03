@@ -16,10 +16,22 @@
         border-radius: 5px;
         text-align: center;
 
+        @media only screen and (max-width: 768px) {
+            width: 90%;
+            margin: 0 auto;
+            padding: 2rem 0;
+            border-radius: 10px;
+          }
+
         img {
             width: 27rem;
             height: 20rem;
             border-radius: 5px;
+
+            @media only screen and (max-width: 768px) {
+                width: unset;
+                border-radius: 10px;
+              }
         }
 
         p {

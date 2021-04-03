@@ -53,3 +53,46 @@
         margin: 0 auto;
     }
 }
+
+.m-cards {
+    background-color: #f7f7f8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    &__dropdown-wrapper {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        padding-top: 2rem;
+
+        > div {
+            width: 45%;
+            height: 5rem;
+        }
+    }
+
+    &_carousel-wrapper {
+        flex: 1;
+        margin-top: 2rem;
+    }
+
+    &__tab-list {
+        display: flex;
+        width: 100%;
+        padding: 2rem 0;
+    }
+
+    &__tab {
+        flex: 1;
+        padding: 1.5rem 0;
+        font-size: 1.4rem;
+        text-align: center;
+        border-radius: 5px;
+        margin: 0 2rem;
+
+        &.active {
+            background-color: white;
+        }
+    }
+}
