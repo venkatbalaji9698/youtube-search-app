@@ -9,7 +9,10 @@ import { GET_YOUTUBE_VIDEOS } from '../../constants/api-constants';
 const get = async (url) => await dataAccess.get(url);
 
 export function* getYoutubeVideos(data) {
-    let url = GET_YOUTUBE_VIDEOS + '?part=snippet&type=video&key=' + process.env.REACT_APP_YOUTUBE_KEY + '&q=' + data.data;
+    let url = GET_YOUTUBE_VIDEOS + '?part=snippet&type=video&key=' + process.env.REACT_APP_YOUTUBE_KEY + '&q=' + data.data.val + '&maxResults=' + data.data.maxResults + '&myRating=like';
+    if (data.data.pageToken) {
+        url += '&pageToken=' + data.data.pageToken;
+    }
     try {
         const response = yield call(get, url);
         yield put(setYoutubeVideosResponse(response));
